@@ -1,5 +1,52 @@
 <html>
-  <link rel="stylesheet" href="style.css">
+  <style>
+    .photoBooth {
+  width: 435px;
+  height: 267px;
+  margin: -5% auto 0 auto; /* positioning tweak */
+  background:  url('http://bennet.org/images/codepen/ryu-sprite-demo.png') no-repeat 0 0%;
+  animation: sprite 3.5s steps(45) infinite;
+}
+
+@keyframes sprite {
+  from { background-position: 0 0%; }
+  to { background-position: 0 100%; }
+}
+
+p {
+  animation-duration: 3s;
+  animation-name: slide-in;
+}
+pSpan {
+  display: inline-block;
+  animation-duration: 3s;
+  animation-name: grow-shrink;
+}
+
+@keyframes slide-in {
+  from {
+    translate: 150vw 0;
+    scale: 200% 1;
+  }
+
+  to {
+    translate: 0 0;
+    scale: 100% 1;
+  }
+}
+
+@keyframes grow-shrink {
+  25%,
+  75% {
+    scale: 100%;
+  }
+
+  50% {
+    scale: 200%;
+    color: magenta;
+  }
+}
+  </style>
   <body style='background-color:#000080'>
     <div class="photoBooth"></div>
     <pSpan>404</pSpan>
